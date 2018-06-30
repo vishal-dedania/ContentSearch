@@ -5,9 +5,9 @@ namespace ContentSearch.Services
 {
     public class ContentSearchService : IContentSearchService
     {
-        public Task<SearchResult> SearchAsync(string url)
+        public async Task<SearchResult> SearchAsync(string url)
         {
-            throw new System.NotImplementedException();
+            return await Task.Factory.StartNew(() => new SearchResult());
         }
     }
 }
