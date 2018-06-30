@@ -13,4 +13,8 @@
     <Folder Include="Views\Home\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ContentSearch.Services\ContentSearch.Services.csproj" />
+  </ItemGroup>
+
 </Project>

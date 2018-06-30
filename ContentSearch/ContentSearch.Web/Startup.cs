@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using ContentSearch.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,6 +13,8 @@ namespace ContentSearch.Web
         {
             services.AddMvc().AddControllersAsServices();
             services.AddResponseCaching();
+
+            services.AddTransient<IContentSearchService, ContentSearchService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
