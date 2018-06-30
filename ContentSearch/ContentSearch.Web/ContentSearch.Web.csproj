@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ContentSearch.Repositories\ContentSearch.Repositories.csproj" />
     <ProjectReference Include="..\ContentSearch.Services\ContentSearch.Services.csproj" />
   </ItemGroup>
 

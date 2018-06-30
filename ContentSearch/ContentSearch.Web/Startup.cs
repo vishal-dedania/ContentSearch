@@ -1,4 +1,5 @@
-﻿using ContentSearch.Services;
+﻿using ContentSearch.Repositories;
+using ContentSearch.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +15,10 @@ namespace ContentSearch.Web
             services.AddMvc().AddControllersAsServices();
             services.AddResponseCaching();
 
+            //Repositories
+            services.AddTransient<IImageSearchRepository, ImageSearchRepository>();
+
+            //Services
             services.AddTransient<IContentSearchService, ContentSearchService>();
         }
 

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ContentSearch.Models\ContentSearch.Models.csproj" />
+    <ProjectReference Include="..\ContentSearch.Repositories\ContentSearch.Repositories.csproj" />
   </ItemGroup>
 
 </Project>

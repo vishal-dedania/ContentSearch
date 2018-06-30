@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentSearch.Services", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentSearch.Models", "ContentSearch.Models\ContentSearch.Models.csproj", "{9D8B77CC-D070-4A8E-8BD8-9CCC2960C075}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentSearch.Repositories", "ContentSearch.Repositories\ContentSearch.Repositories.csproj", "{E900C7FE-20CB-4F15-87DC-6AC05A9F050A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9D8B77CC-D070-4A8E-8BD8-9CCC2960C075}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9D8B77CC-D070-4A8E-8BD8-9CCC2960C075}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D8B77CC-D070-4A8E-8BD8-9CCC2960C075}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E900C7FE-20CB-4F15-87DC-6AC05A9F050A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E900C7FE-20CB-4F15-87DC-6AC05A9F050A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E900C7FE-20CB-4F15-87DC-6AC05A9F050A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E900C7FE-20CB-4F15-87DC-6AC05A9F050A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
