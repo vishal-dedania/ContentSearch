@@ -15,9 +15,13 @@ namespace ContentSearch.Services
 
         public async Task<SearchResult> SearchAsync(string url)
         {
-            var images = await _imageSearchRepository.AllImages(url);
-            var keywords = await _imageSearchRepository.MostOccurringWords(url, 10);
-            return new SearchResult();
+            var result = new SearchResult
+            {
+                Images = await _imageSearchRepository.AllImages(url),
+                KeyWords = await _imageSearchRepository.MostOccurringWords(url, 10)
+            };
+
+            return result;
         }
     }
 }
