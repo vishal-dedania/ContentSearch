@@ -16,7 +16,7 @@ namespace ContentSearch.Web
             services.AddResponseCaching();
 
             //Repositories
-            services.AddTransient<IImageSearchRepository, ImageSearchRepository>();
+            services.AddTransient<IContentSearchRepository, ContentSearchRepository>();
 
             //Services
             services.AddTransient<IContentSearchService, ContentSearchService>();

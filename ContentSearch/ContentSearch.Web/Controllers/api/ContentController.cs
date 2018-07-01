@@ -1,6 +1,7 @@
-﻿using ContentSearch.Models;
-using ContentSearch.Services;
+﻿using ContentSearch.Services;
+using ContentSearch.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Threading.Tasks;
 
 namespace ContentSearch.Web.Controllers.api
@@ -17,9 +18,19 @@ namespace ContentSearch.Web.Controllers.api
         }
 
         [HttpPost("search")]
-        public async Task<SearchResult> Search(string url)
+        public async Task<dynamic> Search(ContentSearchViewModel model)
         {
-            return await _contentSearchService.SearchAsync(url);
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Invalid Request");
+            }
+
+            return await _contentSearchService.SearchAsync(model.Url);
         }
+    }
+
+    public class UrlValidatorAttribute : Attribute
+    {
+
     }
 }
