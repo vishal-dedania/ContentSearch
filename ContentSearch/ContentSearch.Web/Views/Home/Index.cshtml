@@ -1,14 +1,85 @@
-﻿
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <title>title</title>
-</head>
-<body>
-<div>
-Hello      
+﻿<div class="row">
+    <div class="col-md-10">
+        <div class="input-group input-group-lg hidden-mobile">
+            <input class="form-control input-lg" type="text" placeholder="Search website content..." id="websiteUrl">
+            <div class="input-group-btn">
+                <button type="button" id="searchContent" class="btn btn-default">
+                    &nbsp;&nbsp;&nbsp;<i class="fa fa-fw fa-search fa-lg"></i>&nbsp;&nbsp;&nbsp;
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
-</body>
-</html>
+
+<!-- row -->
+<div class="row" style="margin-top: 20px;">
+    <div class="col-md-10">
+    <div class="lightBoxGallery">
+        <div id="webImages" class="lightBoxGallery">
+
+        </div>
+        <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+        <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+            <div class="slides"></div>
+            <h3 class="title"></h3>
+            <a class="prev">‹</a>
+            <a class="next">›</a>
+            <a class="close">×</a>
+            <a class="play-pause"></a>
+            <ol class="indicator"></ol>
+        </div>
+
+    </div>
+
+        </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/plugin/blueimp/jquery.blueimp-gallery.min.js"></script>
+    
+    <script>
+
+        function isValidURL(str) {
+            //var a = document.createElement('a');
+            //a.href = str;
+            //return (a.host && a.host != window.location.host);
+
+            return str !== undefined && (str.indexOf("http://") != -1 || str.indexOf("https://") != -1);
+        }
+
+        $("#searchContent").click(function () {
+
+            var requestWebUrl = $('#websiteUrl').val();
+            var dataObject = {
+                'url': requestWebUrl
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "http://localhost:49756/api/content/search",
+                dataType: 'json',
+                data: dataObject,
+                success: function (response) {
+                    //console.log(response.images);
+
+                    var htmlString = "";
+                    //<a href='img/gallery/1.jpg' title='Image from Unsplash' data-gallery=""><img src='img/gallery/1s.jpg'></a>
+                    $.each(response.images, function (i, item) {
+                        if (!isValidURL(item)) {
+                            item = requestWebUrl + item;
+                            console.log(item);
+                        }
+                        imageUrl = item
+                        htmlString += "<a href='" + item + "' data-gallery=''><img style='margin: 5px;' src='" + item + "' height='100px' width='100px'></a>";
+                    });
+
+                    //console.log(htmlString);
+                    $('#webImages').html(htmlString + "");
+                },
+                fail: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+    </script>
+}

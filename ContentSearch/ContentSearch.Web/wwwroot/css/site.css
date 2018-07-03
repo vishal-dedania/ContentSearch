@@ -1,3 +1,9 @@
 div.validation-summary-valid {
     display: none;
 }
+.lightBoxGallery {
+    text-align: center;
+}
+.lightBoxGallery img {
+    margin: 5px;
+}
