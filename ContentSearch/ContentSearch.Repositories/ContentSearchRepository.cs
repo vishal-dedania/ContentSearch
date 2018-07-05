@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
+
 namespace ContentSearch.Repositories
 {
     public class ContentSearchRepository : IContentSearchRepository

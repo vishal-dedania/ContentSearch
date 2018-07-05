@@ -8,5 +8,10 @@ namespace ContentSearch.Web.Controllers
         {
             return View();
         }
+
+        public IActionResult ChartDemo()
+        {
+            return View("ChartDemo");
+        }
     }
 }

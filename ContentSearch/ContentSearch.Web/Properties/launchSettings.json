@@ -16,7 +16,7 @@
       }
     },
     "ContentSearch.Web": {
-      "commandName": "Project",
+      "commandName": "Snapshot Debugger (Azure App Service)",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
