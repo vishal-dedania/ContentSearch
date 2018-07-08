@@ -28,9 +28,4 @@ namespace ContentSearch.Web.Controllers.api
             return await _contentSearchService.SearchAsync(model.Url);
         }
     }
-
-    public class UrlValidatorAttribute : Attribute
-    {
-
-    }
 }
