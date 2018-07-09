@@ -1,7 +1,6 @@
 ﻿using ContentSearch.Services;
 using ContentSearch.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Threading.Tasks;
 
 namespace ContentSearch.Web.Controllers.api
